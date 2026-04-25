@@ -1,0 +1,55 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+<!-- 🌸 Hero Section -->
+<div class="text-center mb-5">
+    <h1 class="fw-bold display-4">❤️❤️Welcome to Blog World ❤️❤️</h1>
+    <p class="text-muted fs-5">😍Readers for your stories😍</p>
+</div>
+
+<!-- 📝 Section Title -->
+<h2 class="text-center mb-5">🥰🥰All Blog Posts</h2>
+
+<!-- 📦 Blog Grid -->
+<div class="container">
+    <div class="row justify-content-center">
+
+        {% for post in posts %}
+        <div class="col-md-4 d-flex justify-content-center">
+
+            <div class="card blog-card shadow-lg">
+
+                {% if post.image %}
+                <div class="img-container">
+                    <img src="{{ post.image.url }}" class="card-img-top">
+                </div>
+                {% endif %}
+
+                <div class="card-body text-center">
+                    <h5 class="fw-bold text-danger">{{ post.title }}</h5>
+
+                    <p class="text-muted">
+                        {{ post.content|truncatewords:15 }}
+                    </p>
+
+                    <a href="{% url 'post_detail' post.id %}" class="btn btn-primary w-100">
+                        Read More 💖
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        {% empty %}
+        <div class="text-center">
+            <h4>No posts yet 🤔</h4>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

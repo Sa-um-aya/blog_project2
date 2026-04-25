@@ -1,0 +1,34 @@
+/* 🌸 Blog Card Upgrade */
+.blog-card {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Image Zoom Effect */
+.img-container {
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.blog-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Card Hover */
+.blog-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(255,105,180,0.4);
+}
+.alert {
+    border-radius: 10px;
+    font-weight: 500;
+}
